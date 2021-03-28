@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>Рисование с помощью Canvas</title>
+		<link rel="STYLESHEET" type="text/css" href="Rules.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Задание 8" />
+	</head>
+	<body>
+		<canvas
+			id="myCanvas"
+			width="1500"
+			height="1000"
+			style="background-color: #eee; border: 1px solid #ccc"
+		>
+			Ваш браузер не поддерживает Canvas
+		</canvas>
+		<script>
+			var canvas = document.getElementById('myCanvas'),
+				context = canvas.getContext('2d')
+
+			let i = 1
+			while (i < 10) {
+				moveSmile(i * 100)
+				setTimeout(2000)
+				//context.clearRect(i * 25, 30, 950, 500)
+				i++
+			}
+			function moveSmile(xCoord) {
+				context.beginPath()
+				context.fill()
+				context.fillStyle = 'yellow'
+				context.beginPath()
+				context.arc(160 + xCoord, 130, 100, 0, 2 * Math.PI)
+				context.fill()
+
+				// рот
+				context.beginPath()
+				context.moveTo(100 + xCoord, 160)
+				context.quadraticCurveTo(160 + xCoord, 250, 220, 160)
+				context.closePath()
+				context.fillStyle = 'red'
+				context.fill()
+				context.lineWidth = 2
+				context.strokeStyle = 'black'
+				context.stroke()
+
+				// зубы
+				contextfillStyle = '#FFFFFF'
+				context.fillRect(140 + xCoord, 160, 15, 15)
+				context.fillRect(170 + xCoord, 160, 15, 15)
+
+				//глаза
+				context.beginPath()
+				context.arc(130 + xCoord, 90, 20, 0, 2 * Math.PI)
+				context.fillStyle = '#333333'
+				context.fill()
+				context.closePath()
+
+				context.beginPath()
+				context.arc(190 + xCoord, 90, 20, 0, 2 * Math.PI)
+				context.fillStyle = '#333333'
+				context.fill()
+				context.closePath()
+			}
+
+			const plus = 230
+			context.beginPath()
+			context.moveTo(30, 20 + plus)
+			context.lineTo(150, 140 + plus)
+			context.lineTo(250, 30 + plus)
+			context.closePath()
+			context.strokeStyle = 'red'
+
+			context.stroke()
+			context.beginPath()
+			context.rect(30, 200 + plus, 100, 90)
+			context.closePath()
+			context.strokeStyle = 'green'
+			context.stroke()
+
+			context.beginPath()
+			context.arc(100, 500 + plus, 90, 0, Math.PI * 2, false)
+			context.closePath()
+			context.strokeStyle = 'blue'
+			context.stroke()
+		</script>
+	</body>
+</html>

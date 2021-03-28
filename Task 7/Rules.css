@@ -1,0 +1,44 @@
+#formArea {
+	width: 500px;
+	height: 250px;
+	position: relative;
+	margin: -380 700 400;
+	border: 5px solid #888;
+	font-size: 16px;
+}
+#in {
+	position: relative;
+	margin: 150 700 400;
+	width: 500px;
+	font-size: 16px;
+}
+#save {
+	background-color: #4caf50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	position: relative;
+	margin: -500 700 400;
+}
+#clear {
+	background-color: #4caf50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	position: relative;
+	margin: -500 850 200;
+}
+body {
+	background-image: url(87836-OHWK1J-819.jpg);
+	font-size: 15pt;
+	color: rgb(255, 0, 0);
+	font-family: Calibri;
+}

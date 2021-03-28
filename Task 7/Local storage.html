@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Страница с формой для данных из Local Storage</title>
+		<link rel="STYLESHEET" type="text/css" href="Rules.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Задание 7" />
+		<script>
+			window.onload = function () {
+				var list = [0]
+
+				if (localStorage.getItem('item') != undefined) {
+					list = JSON.parse(localStorage.getItem('item'))
+					form()
+				}
+
+				document.getElementById('save').onclick = function () {
+					var i = list.length
+					list[i] = document.getElementById('in').value
+					i++
+					form()
+					localStorage.setItem('item', JSON.stringify(list))
+				}
+
+				document.getElementById('clear').onclick = function () {
+					list = []
+					localStorage.setItem('item', JSON.stringify(list))
+					form()
+				}
+
+				function form() {
+					let forma = ''
+					for (var key in list) {
+						forma += list[key] + '\n'
+					}
+					document.getElementById('formArea').innerHTML = forma
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="in" />
+		<button id="save">Сохранить</button>
+		<button id="clear">Очистить все записи</button>
+		<textarea id="formArea"> +_+</textarea>
+	</body>
+</html>

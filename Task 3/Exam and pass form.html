@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>Страница формы отчётности</title>
+		<link rel="STYLESHEET" type="text/css" href="Rules.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Задание 3" />
+	</head>
+	<body>
+		<div class="block1">
+			<div>
+				<strong>Имя:</strong>
+				<input id="first_name" name="fi_name" size="30" type="text" />
+				<strong>Фамилия: </strong><input size="30" id="last_name" />
+				<strong>Отчество: </strong><input size="30" id="middle_name" />
+
+				<strong>Курс:</strong>
+				<select id="subject">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>
+
+				<strong>Факультет:</strong>
+				<select id="subject">
+					<option>ИСАУ</option>
+					<option>ФЕИН</option>
+					<option>ИФИ</option>
+					<option>ФСГН</option>
+				</select>
+
+				<strong>Номер группы: </strong><input size="30" id="group" />
+			</div>
+		</div>
+
+		<div class="block2">
+			Предмет для сдачи <br />
+			<select id="subject">
+				<option>Технологии Web 2.0</option>
+				<option>Информатика</option>
+				<option>Программные технологии Интернет</option>
+				<option>Web-дизайн и портальные технологии</option>
+			</select>
+			<br />
+			<strong>Преподаватель: Лукьянов К.В</strong>
+			<br />
+			Форма сдачи: <br />
+			<input name="rq" value="Ochh" type="radio" /><label>Очная</label>
+			<br />
+
+			<input name="rq" value="Distance" type="radio" /><label
+				>Дистанционная</label
+			>
+			<br />
+
+			<p>Выберите дату сдачи: <input type="date" name="calendar" /></p>
+		</div>
+
+		<div class="block3">
+			<div style="text-align: center"><button onclick="a()">Send</button></div>
+		</div>
+	</body>
+</html>

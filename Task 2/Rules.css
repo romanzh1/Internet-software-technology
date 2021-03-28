@@ -1,0 +1,36 @@
+body {
+	background: black;
+	font-size: 12pt;
+	color: rgb(255, 0, 0);
+	font-family: Calibri;
+}
+h1 {
+	color: lightblue;
+}
+h2 {
+	color: rgb(173, 230, 185);
+}
+A:link {
+	text-decoration: none;
+	color: Orange;
+}
+A:visited {
+	text-decoration: none;
+	color: Blue;
+}
+A:active {
+	text-decoration: underline;
+}
+A:hover {
+	text-decoration: underline;
+	color: red;
+}
+p:first-letter {
+	font-size: 200%;
+	font-weight: bold;
+	color: Green;
+}
+p {
+	font-size: 150%;
+	text-align: left;
+}

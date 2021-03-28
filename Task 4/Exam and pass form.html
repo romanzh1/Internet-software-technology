@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>Страница формы отчётности</title>
+		<link rel="STYLESHEET" type="text/css" href="Rules.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Задание 4" />
+
+		<script>
+			function check() {
+				let str1 = document.getElementById('firstName').value
+				let str2 = document.getElementById('lastName').value
+				var str3 = document.getElementById('middleName').value
+				let str4 = document.getElementById('group').value
+				let str5 = document.getElementById('subject').value
+				let str6 = document.getElementById('faculty').value
+				let str = document.getElementById('subject')
+
+				let teacher = document.getElementsByName('teacher').value
+				let calendar = document.querySelector('input[type="date"]').value
+				let calendarTime = document.querySelector('input[type="time"]').value
+
+				document.getElementById('table').innerHTML = `
+                <table id = table>
+                    <caption>ПРОВЕРЬТЕ И ПОДТВЕРДИТЕ ЗАПИСЬ НА ЗАЧЕТ</caption>
+                        <tr>
+                            <th>Имя</th>
+                            <td>${str1}</td>
+                        </tr>
+                        <tr>
+                            <th>Фамилия</th>
+                            <td>${str2}</td>
+                        </tr>
+                        <tr>
+                            <th>Отчество</th>
+                            <td>${str3}</td>
+                        </tr>
+                        <tr>
+                            <th>Группа</th>
+                            <td>${str4}</td>
+                        </tr>
+                        <tr>
+                            <th>Предмет</th>
+                            <td>${str5}</td>
+                        </tr>
+                        <tr>
+                            <th>Факультет</th>
+                            <td>${str6}</td>
+                        </tr>
+                        <tr>
+                            <th>Дата сдачи</th>
+                            <td>${calendar}</td>
+                        </tr>
+                        <tr>
+                            <th>Время сдачи</th>
+                            <td>${calendarTime}</td>
+                        </tr>
+			    </table>
+                `
+
+				if (isEmpty(str1, str2, str3, str4, str5, str6))
+					alert('Запоните все поля!')
+			}
+
+			function isEmpty(str1, str2, str3, str4, str5, str6) {
+				return (
+					str1 == null ||
+					str1.length == 0 ||
+					str2 == null ||
+					str2.length == 0 ||
+					str3 == null ||
+					str3.length == 0 ||
+					str4 == null ||
+					str4.length == 0 ||
+					str5 == null ||
+					str5.length == 0 ||
+					str6 == null ||
+					str6.length == 0
+				)
+			}
+		</script>
+	</head>
+	<body>
+		<div class="block1">
+			<div>
+				<strong>Имя:</strong>
+				<input id="firstName" name="fi_name" size="30" type="text" />
+				<strong>Фамилия: </strong><input size="30" id="lastName" />
+				<strong>Отчество: </strong><input size="30" id="middleName" />
+
+				<strong>Курс:</strong>
+				<select id="course">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>
+
+				<strong>Факультет:</strong>
+				<select id="faculty">
+					<option>ИСАУ</option>
+					<option>ФЕИН</option>
+					<option>ИФИ</option>
+					<option>ФСГН</option>
+				</select>
+
+				<strong>Номер группы: </strong><input size="30" id="group" />
+			</div>
+		</div>
+
+		<div class="block2">
+			Предмет для сдачи <br />
+			<select id="subject">
+				<option>Технологии Web 2.0</option>
+				<option>Информатика</option>
+				<option>Программные технологии Интернет</option>
+				<option>Web-дизайн и портальные технологии</option>
+			</select>
+			<br />
+			<strong>Преподаватель: Лукьянов К.В</strong>
+			<br />
+			Форма сдачи: <br />
+			<input name="rq" value="Ochh" type="radio" /><label>Очная</label>
+			<br />
+
+			<input name="rq" value="Distance" type="radio" /><label
+				>Дистанционная</label
+			>
+			<br />
+
+			<p>Выберите дату сдачи: <input type="date" name="calendar" /></p>
+
+			<p>Выберите время сдачи: <input type="time" name="calendarTime" /></p>
+		</div>
+
+		<div class="block3">
+			<div>
+				<button onclick="check()">Send</button>
+			</div>
+		</div>
+
+		<table id="table">
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>
